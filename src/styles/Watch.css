@@ -415,6 +415,44 @@
   background-color: #050505;
 }
 
+@media (max-width: 768px) {
+  .watch__presentationHero {
+    padding: 60px 20px 20px;
+    min-height: auto;
+  }
+  .watch__presContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .watch__presLeft {
+    width: 160px;
+    margin: 0 auto;
+  }
+  .watch__presCenter {
+    text-align: center;
+  }
+  .watch__presTitle {
+    font-size: 2rem;
+  }
+  .watch__presBadges {
+    justify-content: center;
+  }
+  .watch__presGenres {
+    justify-content: center;
+  }
+  .watch__presRegarder {
+    position: relative;
+    bottom: 0;
+    margin-top: 30px;
+  }
+  .watch__contentMain {
+    padding: 20px;
+  }
+  .watch__epListV2 {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 1200px) {
   .watch__presContainer {
     flex-wrap: wrap;

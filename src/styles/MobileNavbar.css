@@ -1,0 +1,49 @@
+.mobileNav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background-color: rgba(5, 5, 5, 0.95);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 2000;
+  padding-bottom: env(safe-area-inset-bottom); /* Support pour encoche iPhone */
+}
+
+.mobileNav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: transparent;
+  color: #666;
+  border: none;
+  width: 20%;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.mobileNav__item span {
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.mobileNav__item.active {
+  color: white;
+}
+
+.mobileNav__item.active svg {
+  color: #e50914;
+}
+
+/* On cache la barre mobile sur desktop */
+@media (min-width: 1024px) {
+  .mobileNav {
+    display: none;
+  }
+}

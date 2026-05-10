@@ -222,6 +222,22 @@
   transform: rotate(180deg);
 }
 
+@media (max-width: 1024px) {
+  .nav {
+    padding: 0 20px;
+  }
+  .nav__links {
+    display: none;
+  }
+  .nav__search input {
+    width: 0 !important;
+    display: none;
+  }
+  .nav__userInfo {
+    display: none;
+  }
+}
+
 @media (max-width: 1200px) {
   .nav__linkItem span {
     display: none;

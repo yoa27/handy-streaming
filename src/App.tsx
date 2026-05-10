@@ -8,6 +8,7 @@ import Playlists from './pages/Playlists';
 import PlaylistDetail from './pages/PlaylistDetail';
 import SharedPlaylist from './pages/SharedPlaylist';
 import Navbar from './components/Navbar';
+import MobileNavbar from './components/MobileNavbar';
 import Footer from './components/Footer';
 import { FavoritesProvider } from './hooks/useFavorites';
 import { AuthProvider } from './hooks/AuthContext';
@@ -34,6 +35,7 @@ function App() {
                   <Route path="/login" element={<Login />} />
                 </Routes>
                 <Footer />
+                <MobileNavbar />
               </div>
             </FavoritesProvider>
           </PlaylistUIProvider>
