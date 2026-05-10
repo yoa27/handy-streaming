@@ -1,0 +1,229 @@
+.nav {
+  position: fixed;
+  top: 0;
+  padding: 0 40px;
+  width: 100%;
+  height: 65px;
+  z-index: 1000;
+  transition: all 0.4s;
+  background: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.nav__black {
+  background-color: rgba(5, 5, 5, 0.85);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav__contents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.nav__left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Logo Box Style Frembed */
+.nav__logoBox {
+  text-decoration: none;
+  border: 1px solid #e50914;
+  padding: 4px 10px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.nav__logoText {
+  color: white;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav__linkItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ccc;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.2s;
+  padding: 5px 10px;
+}
+
+.nav__linkItem:hover, .nav__linkItem.active {
+  color: white;
+}
+
+.nav__linkItem svg {
+  stroke-width: 1.5px;
+}
+
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav__search {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  padding: 5px;
+  transition: all 0.3s;
+}
+
+.nav__search input {
+  background: transparent;
+  border: none;
+  color: white;
+  margin-left: 10px;
+  font-size: 14px;
+  width: 0;
+  opacity: 0;
+  transition: all 0.4s;
+  border-bottom: 1px solid transparent;
+}
+
+.nav__search:focus-within input, .nav__search:hover input {
+  width: 200px;
+  opacity: 1;
+  border-bottom: 1px solid #444;
+}
+
+.nav__icon {
+  color: white;
+  cursor: pointer;
+  stroke-width: 1.5px;
+}
+
+/* User Menu Style - Clickable */
+.nav__userArea {
+  position: relative;
+}
+
+.nav__userMenu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav__userMenu:hover, .nav__userMenu.open {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav__dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 10px;
+  min-width: 200px;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.6);
+  z-index: 1001;
+  animation: navFadeIn 0.2s ease-out;
+}
+
+@keyframes navFadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.nav__dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  font-size: 14px;
+  color: #ccc;
+  border-radius: 8px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.nav__dropdownItem:hover {
+  background: #222;
+  color: white;
+}
+
+.nav__dropdownDivider {
+  height: 1px;
+  background: #222;
+  margin: 5px 0;
+}
+
+.nav__logout:hover {
+  color: #e50914;
+}
+
+.nav__avatarCircle {
+  width: 32px;
+  height: 32px;
+  background: #111;
+  border: 2px solid #3b82f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.nav__userInfo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.nav__userName {
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+}
+
+.nav__userStatus {
+  font-size: 9px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.nav__chevron {
+  color: #666;
+  transition: transform 0.3s;
+}
+
+.nav__chevron.rotate {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 1200px) {
+  .nav__linkItem span {
+    display: none;
+  }
+}

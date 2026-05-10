@@ -1,0 +1,438 @@
+.watch {
+  background-color: #050505;
+  min-height: 100vh;
+  color: white;
+}
+
+.watch__floatingBack {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.watch__floatingBack:hover {
+  background: #e50914;
+  transform: scale(1.1);
+}
+
+/* Presentation Hero Style capture */
+.watch__presentationHero {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 60px 40px;
+}
+
+.watch__presContainer {
+  display: flex;
+  gap: 40px;
+  max-width: 1600px;
+  margin: 0 auto;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Colonne Gauche */
+.watch__presLeft {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.watch__presPoster {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  margin-bottom: 20px;
+}
+
+.watch__presPoster img {
+  width: 100%;
+  display: block;
+}
+
+.watch__presTrailerBtn {
+  width: 100%;
+  background-color: #e50914;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.2s;
+}
+
+.watch__presTrailerBtn:hover {
+  transform: scale(1.02);
+  background-color: #f40a15;
+}
+
+.watch__presActions {
+  display: flex;
+  gap: 10px;
+}
+
+.watch__presSmallBtn {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Colonne Centre */
+.watch__presCenter {
+  flex: 1;
+}
+
+.watch__presSubtitle {
+  font-size: 12px;
+  font-weight: bold;
+  color: #888;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.watch__presTitle {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.watch__presTitle span {
+  color: #666;
+  font-weight: 400;
+}
+
+.watch__presBadges {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.watch__presBadge {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #ccc;
+}
+
+.watch__presBadge--rating {
+  background: rgba(243, 156, 18, 0.2);
+  color: #f39c12;
+}
+
+.watch__presBadge--link {
+  color: #0070f3;
+  cursor: pointer;
+}
+
+.watch__presGenres {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.watch__presGenre {
+  background: #222;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #999;
+}
+
+.watch__presSynopsis h3 {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.watch__presSynopsis p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #eee;
+  max-width: 800px;
+}
+
+/* Colonne Droite : Casting Card */
+.watch__presRight {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+.watch__castCard {
+  background: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.watch__castHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.watch__castCount {
+  color: #555;
+}
+
+.watch__castListSmall {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.watch__castItemSmall {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.watch__castItemSmall img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.watch__castNameSmall {
+  flex: 1;
+}
+
+.watch__castNameSmall p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.watch__castNameSmall span {
+  font-size: 11px;
+  color: #666;
+}
+
+.watch__castFav {
+  color: #444;
+  cursor: pointer;
+}
+
+.watch__castMoreBtn {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #ccc;
+}
+
+/* Bouton Regarder Central */
+.watch__presRegarder {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.watch__presRegarder span {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.watch__presRegarder:hover {
+  opacity: 0.8;
+}
+
+/* Player Area */
+.watch__contentMain {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+.watch__playerContainer {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: black;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.watch__iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* TV Controls V2 */
+.watch__tvControls {
+  margin-top: 40px;
+  background: #111;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #222;
+}
+
+.watch__episodesGridV2 h3 {
+  margin: 20px 0;
+  font-size: 1.2rem;
+}
+
+.watch__epListV2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.watch__epItemV2 {
+  background: #1a1a1a;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.watch__epItemV2:hover {
+  transform: scale(1.02);
+}
+
+.watch__epItemV2.active {
+  border: 2px solid #e50914;
+}
+
+.watch__epThumbV2 {
+  position: relative;
+}
+
+.watch__epThumbV2 img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.watch__epOverlayV2 {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.watch__epItemV2:hover .watch__epOverlayV2 {
+  opacity: 1;
+}
+
+.watch__epInfoV2 {
+  padding: 12px;
+}
+
+.watch__epNumV2 {
+  color: #e50914;
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.watch__epNameV2 {
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.watch__recommendations {
+  margin-top: 60px;
+}
+
+.watch__sectionTitle {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.watch__loading {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background-color: #050505;
+}
+
+@media (max-width: 1200px) {
+  .watch__presContainer {
+    flex-wrap: wrap;
+  }
+  .watch__presRight {
+    width: 100%;
+  }
+  .watch__castListSmall {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .watch__presLeft {
+    width: 100%;
+  }
+  .watch__presTitle {
+    font-size: 2.2rem;
+  }
+}

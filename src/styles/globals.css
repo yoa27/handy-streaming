@@ -1,0 +1,80 @@
+:root {
+  --netflix-red: #e50914;
+  --netflix-black: #111;
+  --netflix-dark-gray: #181818;
+  --netflix-light-gray: #b3b3b3;
+  --netflix-white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--netflix-black);
+  color: var(--netflix-white);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.watchProviders {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.watchProviders__text {
+  font-size: 14px;
+  color: var(--netflix-light-gray);
+  font-weight: bold;
+}
+
+.watchProviders__logos {
+  display: flex;
+  gap: 8px;
+}
+
+.watchProviders__logo {
+  width: 25px;
+  height: 25px;
+  border-radius: 4px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}

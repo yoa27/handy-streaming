@@ -1,0 +1,151 @@
+.pModal__overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  backdrop-filter: blur(10px);
+}
+
+.pModal__content {
+  background-color: #141414;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  padding: 30px;
+  border: 1px solid #333;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+}
+
+.pModal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.pModal__header h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.pModal__close {
+  background: transparent;
+  color: #666;
+}
+
+.pModal__movieInfo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: #1a1a1a;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.pModal__movieInfo img {
+  width: 40px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.pModal__movieInfo p {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.pModal__list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.pModal__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 5px;
+}
+
+.pModal__item:hover {
+  background-color: #222;
+}
+
+.pModal__item.added {
+  background-color: rgba(46, 204, 113, 0.1);
+  color: #2ecc71;
+}
+
+.pModal__empty {
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.pModal__showCreate {
+  width: 100%;
+  background: transparent;
+  color: #e50914;
+  border: 1px dashed #e50914;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.pModal__showCreate:hover {
+  background-color: rgba(229, 9, 20, 0.1);
+}
+
+.pModal__createForm {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+}
+
+.pModal__createForm input {
+  width: 100%;
+  background-color: #222;
+  border: 1px solid #444;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.pModal__createActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.pModal__createActions button {
+  background: transparent;
+  color: white;
+  font-size: 14px;
+}
+
+.pModal__confirmBtn {
+  background-color: #e50914 !important;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.pModal__confirmBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
