@@ -11,6 +11,7 @@ const Navbar: React.FC = () => {
   const [show, handleShow] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const [searchParams] = useSearchParams();
@@ -30,17 +31,19 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', transitionNavbar);
   }, []);
 
-  // Fermer le menu si on clique ailleurs ou si on change de page
+  // Fermer le menu et la recherche si on clique ailleurs ou si on change de page
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (!target.closest('.nav__userMenu')) {
+      if (!target.closest('.nav__userMenu') && !target.closest('.nav__search')) {
         setIsMenuOpen(false);
+        setIsSearchOpen(false);
       }
     };
 
     window.addEventListener('click', handleClickOutside);
     setIsMenuOpen(false);
+    setIsSearchOpen(false);
     return () => window.removeEventListener('click', handleClickOutside);
   }, [location.pathname]);
 
@@ -48,7 +51,13 @@ const Navbar: React.FC = () => {
     e.preventDefault();
     if (searchValue.trim()) {
       navigate(`/search?q=${searchValue}`);
+      setIsSearchOpen(false);
     }
+  };
+
+  const toggleSearch = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsSearchOpen(!isSearchOpen);
   };
 
   const toggleMenu = (e: React.MouseEvent) => {
@@ -61,7 +70,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className={`nav ${show && 'nav__black'}`}>
+    <nav className={`nav ${show && 'nav__black'} ${isSearchOpen ? 'nav--searchActive' : ''}`}>
       <div className="nav__contents">
         <div className="nav__left">
           <Link to="/" className="nav__logoBox">
@@ -93,13 +102,14 @@ const Navbar: React.FC = () => {
         </div>
 
         <div className="nav__right">
-          <form onSubmit={handleSearch} className="nav__search">
-            <Search className="nav__icon" size={20} />
+          <form onSubmit={handleSearch} className={`nav__search ${isSearchOpen ? 'active' : ''}`}>
+            <Search className="nav__icon" size={20} onClick={toggleSearch} />
             <input
               type="text"
               placeholder="Rechercher..."
               value={searchValue}
               onChange={(e) => setSearchValue(e.target.value)}
+              autoFocus={isSearchOpen}
             />
           </form>
           
